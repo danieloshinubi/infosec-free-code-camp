@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const app = express();
+const noCache = require(nocache);
 
 app.use(helmet.hidePoweredBy());
 
