@@ -10,17 +10,15 @@ app.use(helmet.xssFilter());
 
 app.use(helmet.noSniff());
 
-app.use(helmet.ieNoOpen())
-
-// app.get('/test-xss', (req, res) => {
-//     const userInput = req.query.input; // Get user input from query parameter
-
-//     // Render the user input in an HTML page
-//     res.send(`<p>${userInput}</p>`);
-// });
+app.use(helmet.ieNoOpen());
 
 
+const ninetyDaysInSeconds = 90 * 24 * 60 * 60;
 
+app.use(helmet.hsts({
+    maxAge: ninetyDaysInSeconds,
+    force: true
+}));
 
 
 
