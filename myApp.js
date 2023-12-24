@@ -8,8 +8,9 @@ app.use(helmet.frameguard({ action: 'deny' }));
 
 app.use(helmet.xssFilter());
 
-app.use(helmet.noSniff())
+app.use(helmet.noSniff());
 
+app.use(helmet.ieNoOpen())
 
 // app.get('/test-xss', (req, res) => {
 //     const userInput = req.query.input; // Get user input from query parameter
