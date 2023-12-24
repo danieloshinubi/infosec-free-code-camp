@@ -11,6 +11,12 @@ app.use(helmet.xssFilter());
 
 
 
+// app.get('/test-xss', (req, res) => {
+//     const userInput = req.query.input; // Get user input from query parameter
+
+//     // Render the user input in an HTML page
+//     res.send(`<p>${userInput}</p>`);
+// });
 
 
 
@@ -64,7 +70,7 @@ app.use('/_api', api);
 app.get("/", function(request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 4000;
 app.listen(port, () => {
-    console.log(`Information security using Helmet js Server is running on port ${port}`);
+    console.log(`Information security using Helmet js Server is running on port, changed to 4000 ${port}`);
 });
